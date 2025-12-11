@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>La Griso - Mermeladas Artesanales</title>
+    <script>
+      // Redirige todas las rutas a index.html para que React Router funcione
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var newPath = '/LaGriso/index.html' + (path !== '/' ? path : '') + search + hash;
+      window.location.replace(newPath);
+    </script>
+  </head>
+  <body>
+    <p>Redirigiendo...</p>
+  </body>
+</html>
+
