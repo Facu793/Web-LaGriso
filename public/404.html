@@ -9,19 +9,20 @@
       var search = window.location.search;
       var hash = window.location.hash;
       
-      // Si estamos en la raíz o en una ruta que no existe, redirigir a index.html
       var basePath = '/Web-LaGriso';
-      var indexPath = basePath + '/index.html';
       
-      // Si la ruta ya incluye el base path, solo agregamos index.html
-      if (path.startsWith(basePath)) {
-        var newPath = indexPath + path.replace(basePath, '') + search + hash;
+      // Si estamos en la raíz del sitio o en una ruta que no existe
+      if (path === basePath + '/' || path === basePath) {
+        // Redirigir directamente a index.html en la raíz
+        window.location.replace(basePath + '/index.html');
+      } else if (path.startsWith(basePath)) {
+        // Si la ruta ya incluye el base path, redirigir a index.html con la ruta
+        var route = path.replace(basePath, '');
+        window.location.replace(basePath + '/index.html' + route + search + hash);
       } else {
-        // Si no, construimos la ruta completa
-        var newPath = indexPath + (path !== '/' ? path : '') + search + hash;
+        // Si no tiene el base path, agregarlo
+        window.location.replace(basePath + '/index.html' + path + search + hash);
       }
-      
-      window.location.replace(newPath);
     </script>
   </head>
   <body>
