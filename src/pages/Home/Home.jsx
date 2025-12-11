@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import './Home.css'
 
 const Home = () => {
+  const [showMore, setShowMore] = useState(false)
+
   return (
     <div className="home">
       <section className="banner-section">
@@ -20,27 +23,68 @@ const Home = () => {
             <h2 className="section-title">Bienvenidos a La Griso</h2>
             <div className="intro-text">
               <p>
-                En <strong>La Griso</strong>, nos dedicamos a crear mermeladas artesanales que 
-                capturan la esencia de las frutas más frescas y naturales. Cada frasco es el 
-                resultado de un proceso cuidadoso y tradicional, donde combinamos recetas 
-                familiares con ingredientes de primera calidad.
+                Nuestra historia comienza en el año <strong>XXXX</strong>, cuando nuestro padre, con dedicación y esmero, 
+                inició un proyecto que hoy se ha convertido en un verdadero legado familiar. Lo que empezó como un 
+                sueño personal se transformó, con el paso del tiempo, en una tradición que sus hijos continuamos con 
+                orgullo, compromiso y la misma pasión que él nos transmitió.
               </p>
               <p>
-                Nuestra pasión por la calidad se refleja en cada bocado. Utilizamos frutas 
-                seleccionadas a mano, sin conservantes artificiales ni colorantes, para 
-                ofrecerte un producto auténtico y delicioso que puedes disfrutar en cualquier 
-                momento del día.
+                Nuestras mermeladas se elaboran con frutas de alta calidad, siguiendo procesos cuidados y sin utilizar 
+                aditivos químicos, manteniendo su esencia <strong>100% orgánica</strong>. Creemos en la pureza de los 
+                ingredientes y en la importancia de ofrecer un producto natural, confiable y lleno de sabor auténtico.
               </p>
               <p>
-                Desde nuestros inicios, hemos mantenido el compromiso de elaborar mermeladas 
-                que no solo endulzan tu paladar, sino que también despiertan emociones y 
-                recuerdos especiales. Cada sabor cuenta una historia única, hecha con 
-                dedicación y cariño.
+                Cada frasco que producimos es una manera de honrar su historia y de compartir con ustedes lo que él nos 
+                enseñó: que los mejores sabores nacen del tiempo, del esfuerzo y del amor por hacer las cosas bien. 
+                Queremos que cada bocado sea un homenaje a la familia y una invitación a disfrutar de lo auténtico.
               </p>
             </div>
+            <button 
+              className="more-button"
+              onClick={() => setShowMore(true)}
+            >
+              Más sobre nosotros
+              <span className="arrow">▼</span>
+            </button>
           </div>
         </div>
       </section>
+
+      {showMore && (
+        <>
+          <div className="modal-overlay" onClick={() => setShowMore(false)}></div>
+          <div className="modal-content">
+            <button className="modal-close" onClick={() => setShowMore(false)}>×</button>
+            <h2>Más sobre La Griso</h2>
+            <div className="modal-text">
+              <p>
+                Trabajamos directamente con productores locales para asegurar la frescura 
+                de nuestras materias primas. Nuestro proceso de elaboración sigue métodos 
+                tradicionales que han sido perfeccionados a lo largo de los años, garantizando 
+                un sabor auténtico y una textura perfecta en cada frasco.
+              </p>
+              <p>
+                En La Griso, creemos que cada mermelada debe ser una experiencia única. 
+                Por eso, nos esforzamos por crear combinaciones innovadoras que sorprendan 
+                a tu paladar, mientras mantenemos la esencia de los sabores clásicos que 
+                todos amamos.
+              </p>
+              <p>
+                Nuestro compromiso con la sostenibilidad nos lleva a trabajar con envases 
+                reciclables y a minimizar nuestro impacto ambiental. Cada frasco que producimos 
+                es el resultado de un proceso cuidadoso que respeta tanto la naturaleza como 
+                las tradiciones culinarias.
+              </p>
+              <p>
+                La calidad es nuestra prioridad número uno. Por eso, cada lote pasa por 
+                rigurosos controles de calidad para asegurar que solo los mejores productos 
+                lleguen a tu mesa. Desde la selección de frutas hasta el envasado final, 
+                cada paso es supervisado con atención al detalle.
+              </p>
+            </div>
+          </div>
+        </>
+      )}
 
       <section className="features-section">
         <div className="container">

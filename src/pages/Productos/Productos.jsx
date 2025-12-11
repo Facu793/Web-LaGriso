@@ -4,11 +4,20 @@ import productosData from '../../data/productos.json'
 
 const Productos = () => {
   const [productos, setProductos] = useState([])
+  const [selectedImage, setSelectedImage] = useState(null)
 
   useEffect(() => {
     // Simular carga de datos (en el futuro vendrá del backend)
     setProductos(productosData)
   }, [])
+
+  const handleImageClick = (producto) => {
+    setSelectedImage(producto)
+  }
+
+  const closeImageModal = () => {
+    setSelectedImage(null)
+  }
 
   return (
     <div className="productos-page">
@@ -31,9 +40,15 @@ const Productos = () => {
             <div className="productos-grid">
               {productos.map((producto) => (
                 <div key={producto.id} className="producto-card">
-                  <div className="producto-image">
+                  <div 
+                    className="producto-image"
+                    onClick={() => handleImageClick(producto)}
+                  >
                     <div className="producto-image-placeholder">
                       {producto.emoji || '🍯'}
+                    </div>
+                    <div className="image-overlay">
+                      <span className="zoom-icon">🔍</span>
                     </div>
                   </div>
                   <div className="producto-info">
@@ -51,6 +66,20 @@ const Productos = () => {
           )}
         </div>
       </section>
+
+      {selectedImage && (
+        <>
+          <div className="image-modal-overlay" onClick={closeImageModal}></div>
+          <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="image-modal-close" onClick={closeImageModal}>×</button>
+            <div className="image-modal-image">
+              <div className="image-modal-placeholder">
+                {selectedImage.emoji || '🍯'}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   )
 }
