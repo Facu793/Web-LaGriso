@@ -11,7 +11,7 @@ const Home = () => {
           <div className="banner-overlay">
             <div className="banner-content">
               <h2>Sabores que Despiertan Recuerdos</h2>
-              <p>Mermeladas artesanales hechas con amor y los mejores ingredientes naturales</p>
+              <p>Mermeladas</p>
             </div>
           </div>
         </div>
