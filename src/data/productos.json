@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mermelada de Fresa",
+    "descripcion": "Deliciosa mermelada elaborada con fresas frescas seleccionadas. Su sabor dulce y natural es perfecto para acompañar tus desayunos y meriendas.",
+    "ingredientes": "Fresas, azúcar, limón",
+    "emoji": "🍓"
+  },
+  {
+    "id": 2,
+    "nombre": "Mermelada de Durazno",
+    "descripcion": "Un clásico sabor que nunca pasa de moda. Elaborada con duraznos maduros que aportan una textura suave y un sabor exquisito.",
+    "ingredientes": "Duraznos, azúcar, limón",
+    "emoji": "🍑"
+  },
+  {
+    "id": 3,
+    "nombre": "Mermelada de Naranja",
+    "descripcion": "El cítrico perfecto para empezar el día. Esta mermelada combina la dulzura natural con el toque ácido característico de las naranjas.",
+    "ingredientes": "Naranjas, azúcar",
+    "emoji": "🍊"
+  },
+  {
+    "id": 4,
+    "nombre": "Mermelada de Arándanos",
+    "descripcion": "Rica en antioxidantes y con un sabor único. Ideal para quienes buscan algo diferente y saludable.",
+    "ingredientes": "Arándanos, azúcar, limón",
+    "emoji": "🫐"
+  },
+  {
+    "id": 5,
+    "nombre": "Mermelada de Ciruela",
+    "descripcion": "Un sabor intenso y delicioso que combina perfectamente con quesos y panes artesanales. Elaborada con ciruelas de temporada.",
+    "ingredientes": "Ciruelas, azúcar, canela",
+    "emoji": "🟣"
+  },
+  {
+    "id": 6,
+    "nombre": "Mermelada de Frutilla y Vainilla",
+    "descripcion": "Una combinación especial que realza el sabor de las frutillas con un toque de vainilla. Perfecta para ocasiones especiales.",
+    "ingredientes": "Frutillas, azúcar, extracto de vainilla",
+    "emoji": "🍓"
+  }
+]
+
